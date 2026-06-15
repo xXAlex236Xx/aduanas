@@ -1,68 +1,53 @@
-<html><head><meta charset="UTF-8"><title>Dashboard – SIGF</title><link rel="stylesheet" href="style.css"></head>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><script>
+  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()
+</script><title>Dashboard – SIGF</title></head>
 <body>
-<div class="sidebar">
-  <div class="sidebar-header">
-    <div class="sidebar-logo">Aduanas de Chile</div>
-    <div class="sidebar-title">SIGF</div>
-    <div class="sidebar-subtitle">Sistema Fronterizo</div>
-  </div>
-  <nav class="sidebar-nav">
-    <div class="sidebar-section">Principal</div>
-    <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
-    <div class="sidebar-section">Gestión</div>
-    <a href="pasajeros.html"><span class="nav-icon">🧑</span> Pasajeros</a>
-    <a href="menores.html"><span class="nav-icon">👦</span> Menores</a>
-    <a href="vehiculos.html"><span class="nav-icon">🚗</span> Vehículos</a>
-    <a href="sag.html"><span class="nav-icon">🌿</span> SAG</a>
-    <a href="control.html"><span class="nav-icon">✅</span> Control</a>
-    <div class="sidebar-section">Reportes</div>
-    <a href="reportes.html"><span class="nav-icon">📄</span> Reportes</a>
-    <a href="admin.html"><span class="nav-icon">⚙️</span> Administración</a>
-  </nav>
-  <div class="sidebar-footer">
-    <div class="user-chip">
-      <div class="user-avatar">JR</div>
-      <div>
-        <div class="user-name">J. Rodríguez</div>
-        <div class="user-role">Oficial Aduanas</div>
+  <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  <div class="sidebar-overlay"></div>
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">Aduanas de Chile</div>
+      <div class="sidebar-title">SIGF</div>
+      <div class="sidebar-subtitle">Sistema Fronterizo</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">Principal</div>
+      <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+      <div class="sidebar-section">Gestión</div>
+      <a href="pasajeros.html"><span class="nav-icon">🧑</span> Pasajeros</a>
+      <a href="menores.html"><span class="nav-icon">👦</span> Menores</a>
+      <a href="vehiculos.html"><span class="nav-icon">🚗</span> Vehículos</a>
+      <a href="sag.html"><span class="nav-icon">🌿</span> SAG</a>
+      <a href="control.html"><span class="nav-icon">✅</span> Control</a>
+      <div class="sidebar-section">Sistema</div>
+      <a href="reportes.html"><span class="nav-icon">📄</span> Reportes</a>
+      <a href="admin.html"><span class="nav-icon">⚙️</span> Administración</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-chip">
+        <div class="user-avatar">JR</div>
+        <div>
+          <div class="user-name">J. Rodríguez</div>
+          <div class="user-role">Oficial Aduanas</div>
+        </div>
       </div>
+      <div class="dark-toggle" title="Modo oscuro"></div>
     </div>
   </div>
-</div>
 <div class="main">
   <div class="page-header">
     <h1>Dashboard</h1>
-    <p>Resumen operacional del día — Monday, 15 de June de 2026</p>
+    <p>Resumen operacional del día</p>
   </div>
   <div class="alert alert-warning">
     <span class="alert-icon">⚠️</span>
     <div><strong>12 revisiones pendientes</strong> requieren atención. Accede al módulo de Control para gestionar.</div>
   </div>
   <div class="stats">
-    <div class="stat">
-      <div class="stat-icon">🧑‍🤝‍🧑</div>
-      <div class="stat-label">Pasajeros</div>
-      <div class="stat-value">1.250</div>
-      <div class="stat-sub">↑ +8% vs ayer</div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon">🚗</div>
-      <div class="stat-label">Vehículos</div>
-      <div class="stat-value">650</div>
-      <div class="stat-sub">↑ +3% vs ayer</div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon">⏱️</div>
-      <div class="stat-label">Tiempo Promedio</div>
-      <div class="stat-value">15 min</div>
-      <div class="stat-sub">↓ −2 min vs ayer</div>
-    </div>
-    <div class="stat">
-      <div class="stat-icon">🔍</div>
-      <div class="stat-label">Revisiones</div>
-      <div class="stat-value">12</div>
-      <div class="stat-sub" style="color:#dc2626">⚠ Pendientes</div>
-    </div>
+    <div class="stat"><div class="stat-icon">🧑‍🤝‍🧑</div><div class="stat-label">Pasajeros</div><div class="stat-value">1.250</div><div class="stat-sub">↑ +8% vs ayer</div></div>
+    <div class="stat"><div class="stat-icon">🚗</div><div class="stat-label">Vehículos</div><div class="stat-value">650</div><div class="stat-sub">↑ +3% vs ayer</div></div>
+    <div class="stat"><div class="stat-icon">⏱️</div><div class="stat-label">Tiempo Promedio</div><div class="stat-value">15 min</div><div class="stat-sub">↓ −2 min vs ayer</div></div>
+    <div class="stat"><div class="stat-icon">🔍</div><div class="stat-label">Revisiones</div><div class="stat-value">12</div><div class="stat-sub" style="color:#dc2626">⚠ Pendientes</div></div>
   </div>
   <div class="card">
     <div class="card-title">Últimos cruces registrados</div>
@@ -77,4 +62,5 @@
     </table>
   </div>
 </div>
+<script src="sigf.js"></script>
 </body></html>

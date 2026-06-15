@@ -1,47 +1,54 @@
-<html><head><meta charset="UTF-8"><title>SAG – SIGF</title><link rel="stylesheet" href="style.css"></head><body>
-<div class="sidebar">
-  <div class="sidebar-header">
-    <div class="sidebar-logo">Aduanas de Chile</div>
-    <div class="sidebar-title">SIGF</div>
-    <div class="sidebar-subtitle">Sistema Fronterizo</div>
-  </div>
-  <nav class="sidebar-nav">
-    <div class="sidebar-section">Principal</div>
-    <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
-    <div class="sidebar-section">Gestión</div>
-    <a href="pasajeros.html"><span class="nav-icon">🧑</span> Pasajeros</a>
-    <a href="menores.html"><span class="nav-icon">👦</span> Menores</a>
-    <a href="vehiculos.html"><span class="nav-icon">🚗</span> Vehículos</a>
-    <a href="sag.html"><span class="nav-icon">🌿</span> SAG</a>
-    <a href="control.html"><span class="nav-icon">✅</span> Control</a>
-    <div class="sidebar-section">Reportes</div>
-    <a href="reportes.html"><span class="nav-icon">📄</span> Reportes</a>
-    <a href="admin.html"><span class="nav-icon">⚙️</span> Administración</a>
-  </nav>
-  <div class="sidebar-footer">
-    <div class="user-chip">
-      <div class="user-avatar">JR</div>
-      <div>
-        <div class="user-name">J. Rodríguez</div>
-        <div class="user-role">Oficial Aduanas</div>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><script>
+  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()
+</script><title>SAG – SIGF</title></head><body>
+  <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  <div class="sidebar-overlay"></div>
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">Aduanas de Chile</div>
+      <div class="sidebar-title">SIGF</div>
+      <div class="sidebar-subtitle">Sistema Fronterizo</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">Principal</div>
+      <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+      <div class="sidebar-section">Gestión</div>
+      <a href="pasajeros.html"><span class="nav-icon">🧑</span> Pasajeros</a>
+      <a href="menores.html"><span class="nav-icon">👦</span> Menores</a>
+      <a href="vehiculos.html"><span class="nav-icon">🚗</span> Vehículos</a>
+      <a href="sag.html"><span class="nav-icon">🌿</span> SAG</a>
+      <a href="control.html"><span class="nav-icon">✅</span> Control</a>
+      <div class="sidebar-section">Sistema</div>
+      <a href="reportes.html"><span class="nav-icon">📄</span> Reportes</a>
+      <a href="admin.html"><span class="nav-icon">⚙️</span> Administración</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-chip">
+        <div class="user-avatar">JR</div>
+        <div>
+          <div class="user-name">J. Rodríguez</div>
+          <div class="user-role">Oficial Aduanas</div>
+        </div>
       </div>
+      <div class="dark-toggle" title="Modo oscuro"></div>
     </div>
   </div>
-</div>
 <div class="main">
   <div class="page-header"><h1>Control SAG</h1><p>Declaración de artículos sujetos a revisión fitosanitaria</p></div>
   <div class="card">
     <div class="card-title">Declaración de ingreso</div>
-    <p style="font-size:13px;color:#6d28d9;margin-bottom:16px">Marque todos los artículos que el pasajero declara transportar:</p>
-    <div class="check-item"><input type="checkbox"><span>🍎 Frutas y verduras frescas</span></div>
-    <div class="check-item"><input type="checkbox"><span>🥩 Carnes y productos cárnicos</span></div>
-    <div class="check-item"><input type="checkbox"><span>🐾 Mascotas y animales vivos</span></div>
-    <div class="check-item"><input type="checkbox"><span>🌱 Plantas, semillas o material vegetal</span></div>
-    <div class="check-item"><input type="checkbox"><span>🧀 Lácteos y productos derivados</span></div>
-    <div class="check-item"><input type="checkbox"><span>🌾 Granos y cereales</span></div>
-    <div style="margin-top:20px;display:flex;gap:10px">
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px">Marque todos los artículos que el pasajero declara transportar:</p>
+    <label class="check-item"><input type="checkbox"><span>🍎 Frutas y verduras frescas</span></label>
+    <label class="check-item"><input type="checkbox"><span>🥩 Carnes y productos cárnicos</span></label>
+    <label class="check-item"><input type="checkbox"><span>🐾 Mascotas y animales vivos</span></label>
+    <label class="check-item"><input type="checkbox"><span>🌱 Plantas, semillas o material vegetal</span></label>
+    <label class="check-item"><input type="checkbox"><span>🧀 Lácteos y productos derivados</span></label>
+    <label class="check-item"><input type="checkbox"><span>🌾 Granos y cereales</span></label>
+    <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
       <button>Enviar declaración</button>
       <button class="btn-ghost">Sin artículos que declarar</button>
     </div>
   </div>
-</div></body></html>
+</div>
+<script src="sigf.js"></script>
+</body></html>

@@ -1,33 +1,38 @@
-<html><head><meta charset="UTF-8"><title>Reportes – SIGF</title><link rel="stylesheet" href="style.css"></head><body>
-<div class="sidebar">
-  <div class="sidebar-header">
-    <div class="sidebar-logo">Aduanas de Chile</div>
-    <div class="sidebar-title">SIGF</div>
-    <div class="sidebar-subtitle">Sistema Fronterizo</div>
-  </div>
-  <nav class="sidebar-nav">
-    <div class="sidebar-section">Principal</div>
-    <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
-    <div class="sidebar-section">Gestión</div>
-    <a href="pasajeros.html"><span class="nav-icon">🧑</span> Pasajeros</a>
-    <a href="menores.html"><span class="nav-icon">👦</span> Menores</a>
-    <a href="vehiculos.html"><span class="nav-icon">🚗</span> Vehículos</a>
-    <a href="sag.html"><span class="nav-icon">🌿</span> SAG</a>
-    <a href="control.html"><span class="nav-icon">✅</span> Control</a>
-    <div class="sidebar-section">Reportes</div>
-    <a href="reportes.html"><span class="nav-icon">📄</span> Reportes</a>
-    <a href="admin.html"><span class="nav-icon">⚙️</span> Administración</a>
-  </nav>
-  <div class="sidebar-footer">
-    <div class="user-chip">
-      <div class="user-avatar">JR</div>
-      <div>
-        <div class="user-name">J. Rodríguez</div>
-        <div class="user-role">Oficial Aduanas</div>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><script>
+  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()
+</script><title>Reportes – SIGF</title></head><body>
+  <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  <div class="sidebar-overlay"></div>
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">Aduanas de Chile</div>
+      <div class="sidebar-title">SIGF</div>
+      <div class="sidebar-subtitle">Sistema Fronterizo</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">Principal</div>
+      <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+      <div class="sidebar-section">Gestión</div>
+      <a href="pasajeros.html"><span class="nav-icon">🧑</span> Pasajeros</a>
+      <a href="menores.html"><span class="nav-icon">👦</span> Menores</a>
+      <a href="vehiculos.html"><span class="nav-icon">🚗</span> Vehículos</a>
+      <a href="sag.html"><span class="nav-icon">🌿</span> SAG</a>
+      <a href="control.html"><span class="nav-icon">✅</span> Control</a>
+      <div class="sidebar-section">Sistema</div>
+      <a href="reportes.html"><span class="nav-icon">📄</span> Reportes</a>
+      <a href="admin.html"><span class="nav-icon">⚙️</span> Administración</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-chip">
+        <div class="user-avatar">JR</div>
+        <div>
+          <div class="user-name">J. Rodríguez</div>
+          <div class="user-role">Oficial Aduanas</div>
+        </div>
       </div>
+      <div class="dark-toggle" title="Modo oscuro"></div>
     </div>
   </div>
-</div>
 <div class="main">
   <div class="page-header"><h1>Reportes</h1><p>Generación y exportación de reportes operacionales</p></div>
   <div class="card">
@@ -37,16 +42,14 @@
       <div class="form-group"><label>Fecha término</label><input type="date"></div>
     </div>
     <div class="form-row">
-      <div class="form-group"><label>Tipo de reporte</label>
-        <select><option>Pasajeros</option><option>Vehículos</option><option>Menores</option><option>SAG</option><option>General</option></select>
-      </div>
-      <div class="form-group"><label>Organismo</label>
-        <select><option>Todos</option><option>Aduana</option><option>PDI</option><option>SAG</option></select>
-      </div>
+      <div class="form-group"><label>Tipo de reporte</label><select><option>Pasajeros</option><option>Vehículos</option><option>Menores</option><option>SAG</option><option>General</option></select></div>
+      <div class="form-group"><label>Organismo</label><select><option>Todos</option><option>Aduana</option><option>PDI</option><option>SAG</option></select></div>
     </div>
-    <div style="display:flex;gap:10px;margin-top:4px">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
       <button>📄 Exportar PDF</button>
       <button class="btn-secondary">📊 Exportar Excel</button>
     </div>
   </div>
-</div></body></html>
+</div>
+<script src="sigf.js"></script>
+</body></html>
