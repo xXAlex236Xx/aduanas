@@ -1,0 +1,52 @@
+<html><head><meta charset="UTF-8"><title>Menores – SIGF</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Aduanas de Chile</div>
+    <div class="sidebar-title">SIGF</div>
+    <div class="sidebar-subtitle">Sistema Fronterizo</div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">Principal</div>
+    <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+    <div class="sidebar-section">Gestión</div>
+    <a href="pasajeros.html"><span class="nav-icon">🧑</span> Pasajeros</a>
+    <a href="menores.html"><span class="nav-icon">👦</span> Menores</a>
+    <a href="vehiculos.html"><span class="nav-icon">🚗</span> Vehículos</a>
+    <a href="sag.html"><span class="nav-icon">🌿</span> SAG</a>
+    <a href="control.html"><span class="nav-icon">✅</span> Control</a>
+    <div class="sidebar-section">Reportes</div>
+    <a href="reportes.html"><span class="nav-icon">📄</span> Reportes</a>
+    <a href="admin.html"><span class="nav-icon">⚙️</span> Administración</a>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="user-chip">
+      <div class="user-avatar">JR</div>
+      <div>
+        <div class="user-name">J. Rodríguez</div>
+        <div class="user-role">Oficial Aduanas</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="page-header"><h1>Menores de edad</h1><p>Validación de autorización notarial para menores</p></div>
+  <div class="alert alert-warning">
+    <span class="alert-icon">⚠️</span>
+    <div>Todo menor que viaje sin ambos padres debe presentar <strong>autorización notarial vigente</strong>.</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Validar menor</div>
+    <div class="form-row">
+      <div class="form-group"><label>Nombre del menor</label><input placeholder="Nombre completo"></div>
+      <div class="form-group"><label>RUN</label><input placeholder="Ej: 23.456.789-0"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>N° Autorización notarial</label><input placeholder="Número de escritura"></div>
+      <div class="form-group"><label>Notaría</label><input placeholder="Nombre de la notaría"></div>
+    </div>
+    <div class="form-group"><label>¿Viaja con adulto responsable?</label>
+      <select><option>Sí – con padre/madre</option><option>Sí – con tercero autorizado</option><option>No – viaje solo</option></select>
+    </div>
+    <button>Validar autorización</button>
+  </div>
+</div></body></html>

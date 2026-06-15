@@ -1,0 +1,58 @@
+<html><head><meta charset="UTF-8"><title>Administración – SIGF</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Aduanas de Chile</div>
+    <div class="sidebar-title">SIGF</div>
+    <div class="sidebar-subtitle">Sistema Fronterizo</div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">Principal</div>
+    <a href="dashboard.html"><span class="nav-icon">📊</span> Dashboard</a>
+    <div class="sidebar-section">Gestión</div>
+    <a href="pasajeros.html"><span class="nav-icon">🧑</span> Pasajeros</a>
+    <a href="menores.html"><span class="nav-icon">👦</span> Menores</a>
+    <a href="vehiculos.html"><span class="nav-icon">🚗</span> Vehículos</a>
+    <a href="sag.html"><span class="nav-icon">🌿</span> SAG</a>
+    <a href="control.html"><span class="nav-icon">✅</span> Control</a>
+    <div class="sidebar-section">Reportes</div>
+    <a href="reportes.html"><span class="nav-icon">📄</span> Reportes</a>
+    <a href="admin.html"><span class="nav-icon">⚙️</span> Administración</a>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="user-chip">
+      <div class="user-avatar">JR</div>
+      <div>
+        <div class="user-name">J. Rodríguez</div>
+        <div class="user-role">Oficial Aduanas</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="page-header"><h1>Administración</h1><p>Gestión de usuarios y configuración del sistema</p></div>
+  <div class="card">
+    <div class="card-title">Crear nuevo usuario</div>
+    <div class="form-row">
+      <div class="form-group"><label>Nombre completo</label><input placeholder="Nombre del funcionario"></div>
+      <div class="form-group"><label>Usuario</label><input placeholder="Nombre de usuario"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Rol</label>
+        <select><option>Administrador</option><option>Oficial Aduanas</option><option>PDI</option><option>SAG</option><option>Solo lectura</option></select>
+      </div>
+      <div class="form-group"><label>Contraseña temporal</label><input type="password" placeholder="••••••••"></div>
+    </div>
+    <button>Crear usuario</button>
+  </div>
+  <div class="card">
+    <div class="card-title">Usuarios activos</div>
+    <table>
+      <thead><tr><th>Nombre</th><th>Usuario</th><th>Rol</th><th>Último acceso</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>J. Rodríguez</td><td>jrodriguez</td><td>Oficial Aduanas</td><td>Hoy 09:42</td><td><span class="badge badge-success">Activo</span></td></tr>
+        <tr><td>M. Contreras</td><td>mcontreras</td><td>PDI</td><td>Hoy 08:30</td><td><span class="badge badge-success">Activo</span></td></tr>
+        <tr><td>L. Torres</td><td>ltorres</td><td>SAG</td><td>Ayer 17:10</td><td><span class="badge badge-purple">Inactivo</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></body></html>
