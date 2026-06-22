@@ -1,6 +1,8 @@
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><script>
-  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()
-</script><title>Dashboard – SIGF</title></head>
+  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()</script>
+<title>Dashboard – SIGF</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
 <body>
   <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
   <div class="sidebar-overlay"></div>
@@ -34,33 +36,153 @@
       <div class="dark-toggle" title="Modo oscuro"></div>
     </div>
   </div>
+
 <div class="main">
   <div class="page-header">
     <h1>Dashboard</h1>
-    <p>Resumen operacional del día</p>
+    <p>Resumen operacional del día · Lunes 22 de junio</p>
   </div>
+
   <div class="alert alert-warning">
     <span class="alert-icon">⚠️</span>
     <div><strong>12 revisiones pendientes</strong> requieren atención. Accede al módulo de Control para gestionar.</div>
   </div>
+
   <div class="stats">
-    <div class="stat"><div class="stat-icon">🧑‍🤝‍🧑</div><div class="stat-label">Pasajeros</div><div class="stat-value">1.250</div><div class="stat-sub">↑ +8% vs ayer</div></div>
-    <div class="stat"><div class="stat-icon">🚗</div><div class="stat-label">Vehículos</div><div class="stat-value">650</div><div class="stat-sub">↑ +3% vs ayer</div></div>
-    <div class="stat"><div class="stat-icon">⏱️</div><div class="stat-label">Tiempo Promedio</div><div class="stat-value">15 min</div><div class="stat-sub">↓ −2 min vs ayer</div></div>
-    <div class="stat"><div class="stat-icon">🔍</div><div class="stat-label">Revisiones</div><div class="stat-value">12</div><div class="stat-sub" style="color:#dc2626">⚠ Pendientes</div></div>
+    <div class="stat">
+      <div class="stat-icon">🧑‍🤝‍🧑</div>
+      <div class="stat-label">Pasajeros</div>
+      <div class="stat-value">1.250</div>
+      <div class="stat-sub">↑ +8% vs ayer</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">🚗</div>
+      <div class="stat-label">Vehículos</div>
+      <div class="stat-value">650</div>
+      <div class="stat-sub">↑ +3% vs ayer</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">⏱️</div>
+      <div class="stat-label">Tiempo Prom.</div>
+      <div class="stat-value">15 min</div>
+      <div class="stat-sub">↓ −2 min vs ayer</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">🔍</div>
+      <div class="stat-label">Revisiones</div>
+      <div class="stat-value">12</div>
+      <div class="stat-sub" style="color:#dc2626">⚠ Pendientes</div>
+    </div>
   </div>
+
+  <!-- CHART -->
+  <div class="card chart-wrap">
+    <div class="chart-header">
+      <div class="chart-title">Cruces por hora</div>
+      <div class="chart-legend">
+        <span class="legend-dot" style="--dot-color:#8b5cf6">Pasajeros</span>
+        <span class="legend-dot" style="--dot-color:#34d399">Vehículos</span>
+      </div>
+    </div>
+    <canvas id="trafficChart" height="100"></canvas>
+  </div>
+
   <div class="card">
     <div class="card-title">Últimos cruces registrados</div>
     <table>
       <thead><tr><th>RUN / Pasaporte</th><th>Nombre</th><th>Tipo</th><th>Hora</th><th>Estado</th></tr></thead>
       <tbody>
-        <tr><td>12.345.678-9</td><td>María González</td><td>Entrada</td><td>08:42</td><td><span class="badge badge-success">Aprobado</span></td></tr>
-        <tr><td>A8921034</td><td>Carlos Pereira</td><td>Entrada</td><td>08:55</td><td><span class="badge badge-warning">Revisión</span></td></tr>
-        <tr><td>15.001.234-2</td><td>Ana Muñoz</td><td>Salida</td><td>09:10</td><td><span class="badge badge-success">Aprobado</span></td></tr>
-        <tr><td>B1234567</td><td>John Smith</td><td>Entrada</td><td>09:18</td><td><span class="badge badge-danger">Retenido</span></td></tr>
+        <tr><td>12.345.678-9</td><td>María González</td><td>Entrada</td><td>08:42</td><td><span class="badge badge-success">✓ Aprobado</span></td></tr>
+        <tr><td>A8921034</td><td>Carlos Pereira</td><td>Entrada</td><td>08:55</td><td><span class="badge badge-warning">⏳ Revisión</span></td></tr>
+        <tr><td>15.001.234-2</td><td>Ana Muñoz</td><td>Salida</td><td>09:10</td><td><span class="badge badge-success">✓ Aprobado</span></td></tr>
+        <tr><td>B1234567</td><td>John Smith</td><td>Entrada</td><td>09:18</td><td><span class="badge badge-danger">⛔ Retenido</span></td></tr>
       </tbody>
     </table>
   </div>
 </div>
+
 <script src="sigf.js"></script>
+<script>
+(function() {
+  function buildChart() {
+    var isDark = document.body.classList.contains('dark');
+    var gridColor = isDark ? 'rgba(109,40,217,0.15)' : 'rgba(109,40,217,0.08)';
+    var labelColor = isDark ? '#c4b5fd' : '#6d28d9';
+    var ctx = document.getElementById('trafficChart').getContext('2d');
+
+    var grad1 = ctx.createLinearGradient(0, 0, 0, 220);
+    grad1.addColorStop(0, 'rgba(139,92,246,0.35)');
+    grad1.addColorStop(1, 'rgba(139,92,246,0)');
+
+    var grad2 = ctx.createLinearGradient(0, 0, 0, 220);
+    grad2.addColorStop(0, 'rgba(52,211,153,0.3)');
+    grad2.addColorStop(1, 'rgba(52,211,153,0)');
+
+    if (window._sigfChart) window._sigfChart.destroy();
+    window._sigfChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00'],
+        datasets: [{
+          label: 'Pasajeros',
+          data: [45, 120, 210, 340, 290, 380, 420, 310, 270, 190],
+          borderColor: '#8b5cf6',
+          backgroundColor: grad1,
+          borderWidth: 2.5,
+          pointBackgroundColor: '#8b5cf6',
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          tension: 0.4,
+          fill: true
+        },{
+          label: 'Vehículos',
+          data: [20, 55, 95, 160, 140, 175, 200, 145, 130, 90],
+          borderColor: '#34d399',
+          backgroundColor: grad2,
+          borderWidth: 2.5,
+          pointBackgroundColor: '#34d399',
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          tension: 0.4,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: isDark ? 'rgba(26,17,51,0.95)' : 'rgba(255,255,255,0.95)',
+            titleColor: isDark ? '#c4b5fd' : '#6d28d9',
+            bodyColor: isDark ? '#ede9fe' : '#1e1245',
+            borderColor: isDark ? 'rgba(109,40,217,0.3)' : 'rgba(109,40,217,0.15)',
+            borderWidth: 1,
+            padding: 12,
+            cornerRadius: 10
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: gridColor, drawBorder: false },
+            ticks: { color: labelColor, font: { size: 11 } }
+          },
+          y: {
+            grid: { color: gridColor, drawBorder: false },
+            ticks: { color: labelColor, font: { size: 11 } }
+          }
+        }
+      }
+    });
+  }
+
+  buildChart();
+
+  // Rebuild on dark toggle
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.dark-toggle')) {
+      setTimeout(buildChart, 250);
+    }
+  });
+})();
+</script>
 </body></html>

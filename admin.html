@@ -1,6 +1,7 @@
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><script>
-  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()
-</script><title>Administración – SIGF</title></head><body>
+  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()</script>
+<title>Administración – SIGF</title></head>
+<body>
   <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
   <div class="sidebar-overlay"></div>
   <div class="sidebar">
@@ -52,9 +53,9 @@
     <table>
       <thead><tr><th>Nombre</th><th>Usuario</th><th>Rol</th><th>Último acceso</th><th>Estado</th></tr></thead>
       <tbody>
-        <tr><td>J. Rodríguez</td><td>jrodriguez</td><td>Oficial Aduanas</td><td>Hoy 09:42</td><td><span class="badge badge-success">Activo</span></td></tr>
-        <tr><td>M. Contreras</td><td>mcontreras</td><td>PDI</td><td>Hoy 08:30</td><td><span class="badge badge-success">Activo</span></td></tr>
-        <tr><td>L. Torres</td><td>ltorres</td><td>SAG</td><td>Ayer 17:10</td><td><span class="badge badge-purple">Inactivo</span></td></tr>
+        <tr><td>J. Rodríguez</td><td>jrodriguez</td><td>Oficial Aduanas</td><td>Hoy 09:42</td><td><span class="badge badge-success">✓ Activo</span></td></tr>
+        <tr><td>M. Contreras</td><td>mcontreras</td><td>PDI</td><td>Hoy 08:30</td><td><span class="badge badge-success">✓ Activo</span></td></tr>
+        <tr><td>L. Torres</td><td>ltorres</td><td>SAG</td><td>Ayer 17:10</td><td><span class="badge badge-purple">◉ Inactivo</span></td></tr>
       </tbody>
     </table>
   </div>

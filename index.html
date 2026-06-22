@@ -1,8 +1,17 @@
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><script>
-  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()
-</script><title>SIGF – Aduanas de Chile</title></head>
+  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()</script>
+<title>SIGF – Aduanas de Chile</title></head>
 <body>
 <div class="login-page">
+  <div class="login-dots"></div>
+  <!-- Mountain silhouette banner -->
+  <div class="login-banner">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,200 L0,130 L80,90 L140,115 L220,60 L300,95 L380,45 L440,80 L520,30 L600,70 L680,20 L760,65 L840,35 L920,75 L1000,25 L1080,60 L1160,40 L1240,80 L1320,50 L1440,90 L1440,200 Z" fill="rgba(10,6,24,0.5)"/>
+      <path d="M0,200 L0,155 L100,130 L180,150 L280,110 L360,135 L460,105 L540,125 L640,95 L720,118 L820,100 L900,120 L1000,90 L1100,115 L1200,100 L1300,125 L1440,110 L1440,200 Z" fill="rgba(10,6,24,0.75)"/>
+      <path d="M0,200 L0,175 L200,160 L400,170 L600,155 L800,165 L1000,150 L1200,162 L1440,155 L1440,200 Z" fill="rgba(10,6,24,0.9)"/>
+    </svg>
+  </div>
   <div class="login-card">
     <div class="login-brand">
       <div class="login-logo-ring"><span>🛃</span></div>
@@ -12,10 +21,10 @@
     </div>
     <div class="form-group"><label>Usuario</label><input type="text" placeholder="Ingrese su usuario"></div>
     <div class="form-group"><label>Contraseña</label><input type="password" placeholder="••••••••"></div>
-    <a href="dashboard.html" style="text-decoration:none;display:block;margin-top:8px">
-      <button style="width:100%;justify-content:center;padding:12px;font-size:15px">Ingresar al sistema</button>
+    <a href="dashboard.html" style="text-decoration:none;display:block;margin-top:10px">
+      <button style="width:100%;justify-content:center;padding:13px;font-size:15px">Ingresar al sistema</button>
     </a>
-    <p style="text-align:center;font-size:12px;color:#a78bfa;margin-top:20px">Acceso restringido a personal autorizado</p>
+    <p style="text-align:center;font-size:12px;color:#a78bfa;margin-top:20px;opacity:0.8">Acceso restringido a personal autorizado</p>
     <div style="text-align:center;margin-top:12px"><span class="dark-toggle" style="display:inline-block;cursor:pointer" title="Modo oscuro"></span></div>
   </div>
 </div>

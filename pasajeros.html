@@ -1,6 +1,7 @@
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><script>
-  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()
-</script><title>Pasajeros – SIGF</title></head><body>
+  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()</script>
+<title>Pasajeros – SIGF</title></head>
+<body>
   <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
   <div class="sidebar-overlay"></div>
   <div class="sidebar">
@@ -53,8 +54,8 @@
     <table>
       <thead><tr><th>RUN/Pasaporte</th><th>Nombre</th><th>Tipo</th><th>Hora</th><th>Estado</th></tr></thead>
       <tbody>
-        <tr><td>12.345.678-9</td><td>María González</td><td>Entrada</td><td>08:42</td><td><span class="badge badge-success">Aprobado</span></td></tr>
-        <tr><td>A8921034</td><td>Carlos Pereira</td><td>Entrada</td><td>08:55</td><td><span class="badge badge-warning">Revisión</span></td></tr>
+        <tr><td>12.345.678-9</td><td>María González</td><td>Entrada</td><td>08:42</td><td><span class="badge badge-success">✓ Aprobado</span></td></tr>
+        <tr><td>A8921034</td><td>Carlos Pereira</td><td>Entrada</td><td>08:55</td><td><span class="badge badge-warning">⏳ Revisión</span></td></tr>
       </tbody>
     </table>
   </div>

@@ -1,6 +1,7 @@
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><script>
-  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()
-</script><title>Control – SIGF</title></head><body>
+  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()</script>
+<title>Control – SIGF</title></head>
+<body>
   <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
   <div class="sidebar-overlay"></div>
   <div class="sidebar">
@@ -40,10 +41,10 @@
     <table>
       <thead><tr><th>Organismo</th><th>Responsable</th><th>Última actualización</th><th>Estado</th><th>Acción</th></tr></thead>
       <tbody>
-        <tr><td><strong>Aduana</strong></td><td>J. Rodríguez</td><td>09:42 hoy</td><td><span class="badge badge-success">Aprobado</span></td><td><button class="btn-ghost" style="padding:6px 12px;font-size:12px">Ver detalle</button></td></tr>
-        <tr><td><strong>PDI</strong></td><td>M. Contreras</td><td>09:15 hoy</td><td><span class="badge badge-warning">Pendiente</span></td><td><button class="btn-ghost" style="padding:6px 12px;font-size:12px">Revisar</button></td></tr>
-        <tr><td><strong>SAG</strong></td><td>L. Torres</td><td>08:58 hoy</td><td><span class="badge badge-success">Aprobado</span></td><td><button class="btn-ghost" style="padding:6px 12px;font-size:12px">Ver detalle</button></td></tr>
-        <tr><td><strong>Carabineros</strong></td><td>R. Soto</td><td>08:30 hoy</td><td><span class="badge badge-danger">Alerta</span></td><td><button class="btn-ghost" style="padding:6px 12px;font-size:12px">Atender</button></td></tr>
+        <tr><td><strong>Aduana</strong></td><td>J. Rodríguez</td><td>09:42 hoy</td><td><span class="badge badge-success">✓ Aprobado</span></td><td><button class="btn-ghost" style="padding:6px 12px;font-size:12px">Ver detalle</button></td></tr>
+        <tr><td><strong>PDI</strong></td><td>M. Contreras</td><td>09:15 hoy</td><td><span class="badge badge-warning">⏳ Pendiente</span></td><td><button class="btn-ghost" style="padding:6px 12px;font-size:12px">Revisar</button></td></tr>
+        <tr><td><strong>SAG</strong></td><td>L. Torres</td><td>08:58 hoy</td><td><span class="badge badge-success">✓ Aprobado</span></td><td><button class="btn-ghost" style="padding:6px 12px;font-size:12px">Ver detalle</button></td></tr>
+        <tr><td><strong>Carabineros</strong></td><td>R. Soto</td><td>08:30 hoy</td><td><span class="badge badge-danger">⛔ Alerta</span></td><td><button class="btn-ghost" style="padding:6px 12px;font-size:12px">Atender</button></td></tr>
       </tbody>
     </table>
   </div>

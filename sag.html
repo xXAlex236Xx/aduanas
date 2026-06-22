@@ -1,6 +1,7 @@
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><script>
-  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()
-</script><title>SAG – SIGF</title></head><body>
+  (function(){var d=localStorage.getItem("sigf-dark");if(d==="true"||(d===null&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.body.classList.add("dark")})()</script>
+<title>SAG – SIGF</title></head>
+<body>
   <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
   <div class="sidebar-overlay"></div>
   <div class="sidebar">
@@ -37,7 +38,7 @@
   <div class="page-header"><h1>Control SAG</h1><p>Declaración de artículos sujetos a revisión fitosanitaria</p></div>
   <div class="card">
     <div class="card-title">Declaración de ingreso</div>
-    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px">Marque todos los artículos que el pasajero declara transportar:</p>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;opacity:0.8">Marque todos los artículos que el pasajero declara transportar:</p>
     <label class="check-item"><input type="checkbox"><span>🍎 Frutas y verduras frescas</span></label>
     <label class="check-item"><input type="checkbox"><span>🥩 Carnes y productos cárnicos</span></label>
     <label class="check-item"><input type="checkbox"><span>🐾 Mascotas y animales vivos</span></label>
